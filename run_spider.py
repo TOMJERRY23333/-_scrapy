@@ -5,15 +5,12 @@ import os
 import sys
 from scrapy.crawler import CrawlerProcess
 from scrapy.utils.project import get_project_settings
-from spiders.video import VideoSpider
-from spiders.user import UserSpider
-from spiders.images import Image_Spider
 from spiders.user_video import UserVideoSpider
 
 
 if __name__ == '__main__':
     mode = sys.argv[1]
-    #什么是环境变量呢？环境变量是程序和操作系统之间的通信方式。
+    # 什么是环境变量呢？环境变量是程序和操作系统之间的通信方式。
     # 有些字符不宜明文写进代码里，比如数据库密码，个人账户密码，
     # 如果写进自己本机的环境变量里，程序用的时候通过 os.environ.get() 取出来就行了。
     # 这样开发人员本机测试的时候用的是自己本机的一套密码，生产环境部署的时候，用的是公司的公共账号和密码，
@@ -23,9 +20,6 @@ if __name__ == '__main__':
     settings = get_project_settings()
     process = CrawlerProcess(settings)
     mode_to_spider = {
-        'user': UserSpider,
-        'image': Image_Spider,
-        'video':VideoSpider,
         'u_v':UserVideoSpider
 
     }
