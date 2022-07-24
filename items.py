@@ -8,25 +8,7 @@
 import scrapy
 
 
-class WeibouserItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    name=scrapy.Field()
-    comment=scrapy.Field()
-
-
-class weiboimageItem(scrapy.Item):
-    image_urls = scrapy.Field()
-    image_paths = scrapy.Field()
-    # images = scrapy.Field()
-
-class weibovideoItem(scrapy.Item):
-    video_urls = scrapy.Field()
-    video_paths = scrapy.Field()
-
-
 class weibouservideoItem(scrapy.Item):
     name = scrapy.Field()
-    url = scrapy.Field()
     video_url = scrapy.Field()
     video_path = scrapy.Field()
