@@ -22,7 +22,7 @@ class UserVideoSpider(Spider):
 
     def start_requests(self):
 
-        uids = ['5768168516']
+        uids = ['5768168517']  # 输入爬取博主id
         for uid in uids:
             url = f'https://weibo.com/ajax/profile/getWaterFallContent?uid={uid}&cursor='
             yield Request(url+str(0),callback=self.parse, headers=self.headers)
